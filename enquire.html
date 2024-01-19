@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Gaming Laptops</title>
+        <link href="styles/enquire.css" rel="stylesheet">
+        <link href="styles/styles.css" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <div class="logo">
+                <a href="index.html" ><p class="name">LapZilla</p></a>
+            </div>
+                <nav class="navbar">
+                    <a href="index.html" >Home</a>
+                    <a href="product.html">Products</a>
+                    <a href="enquire.html" class="active">Enquire</a>
+                    <a href="About.html">About</a>
+                    <a href="enhansments.html">Enhancements</a>
+                </nav>
+
+        </header>
+
+            <div>
+        <form id="Che03" method="post" action="https://mercury.swin.edu.au/it000000/formtest.php">
+            <h2 id="Che04">Contact Form</h2><br><br>
+
+            <fieldset id="Che05">
+                <legend id="Che10">Personal Information</legend>
+
+                <label class="Clabel" for="firstname">First Name : </label>
+                <input class="Cinput" type="text" id="firstname" name="firstname" maxlength="25" pattern="[A-Za-z]+" required>
+
+                <label class="Clabel" for="lastname">Last Name : </label>
+                <input class="Cinput" type="text" id="lastname" name="lastname" maxlength="25" pattern="[A-Za-z]+" required>
+
+                <label class="Clabel" for="email">Email : </label>
+                <input class="Cinput" type="email" id="email" name="email" required>
+
+                <label class="Clabel" for="phone">Phone : </label>
+                <input class="Cinput" type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+            </fieldset>
+
+            <br><br>
+
+            <fieldset id="Che06">
+                <legend id="Che11">Address Information</legend>
+
+                    <label class="Clabel" for="street">Street : </label>
+                    <input class="Cinput" type="text" id="street" name="street" maxlength="40">
+
+                    <label class="Clabel" for="suburb">Suburb : </label>
+                    <input class="Cinput" type="text" id="suburb" name="suburb" maxlength="20">
+
+                    <label class="Clabel" for="district">District : </label>
+                    <select class="Cselect" id="district" name="district" required>
+                        <option value="" selected>Select District</option>
+                        <option value="NP">Northern Province</option>
+                        <option value="NWP">North Western Province</option>
+                        <option value="WP">Western Province</option>
+                        <option value="NCP">North Central Province</option>
+                        <option value="CP">Central Province</option>
+                        <option value="SP">Sabaragamuwa Province</option>
+                        <option value="EP">Eastern Province</option>
+                        <option value="UP">Uva Province</option>
+                        <option value="SP">Southern Province</option>
+                    </select>
+
+                    <label class="Clabel" for="postcode">Postcode : </label>
+                    <input class="Cinput" type="text" id="postcode" name="postcode" pattern="[0-9]{4}" required>
+
+            </fieldset>
+
+            <br><br>
+
+            <fieldset id="Che07">
+                <legend id="Che12">Preferences</legend>
+
+                <label class="Clabel">Preferred Gaming Laptop brand : </label>
+
+                    <label class="Clabel"><input class="input" type="radio" id="asus" name="PGLB" value="asus" checked>Asus</label>
+
+                    <label class="Clabel"><input class="input" type="radio" id="msi" name="PGLB" value="msi">MSI</label>
+
+                    <label class="Clabel"><input class="input" type="radio" id="LegionLenovo" name="PGLB" value="Legion(Lenovo)">Legion (Lenovo)</label>
+
+                    <label class="Clabel"><input class="input" type="radio" id="AlienWareDell" name="PGLB" value="AlienWare(Dell)">AlienWare (Dell)</label>
+
+            </fieldset>
+
+            <br><br>
+
+            <fieldset id="Che08">
+                <legend id="Che13">Laptop Specs</legend>
+
+                <p>
+                <label class="Clabel" for="processor">Processor : </label>
+                <select class="Cselect" id="processor" name="processor">
+                        <option value="">Select Processor</option>
+                        <option value="i3 14th gen">i3 14th Gen</option>
+                        <option value="i5 14th gen">i5 14th Gen</option>
+                        <option value="i7 14th gen">i7 14th Gen</option>
+                        <option value="i9 14th gen">i9 14th Gen</option>
+                </select>
+
+                <label class="Clabel" for="vga">VGA : </label>
+                <select class="Cselect" id="vga" name="vga">
+                        <option value="" selected>Select VGA</option>
+                        <option value="rtx 4090">RTX 4090 24GB</option>
+                        <option value="rtx 4080">RTX 4080 16GB</option>
+                        <option value="rtx 4070">RTX 4070 12GB</option>
+                        <option value="rtx 4060">RTX 4060Ti 8GB</option>
+                </select>
+
+                <label class="Clabel" for="RAM">RAM : </label>
+                <select class="Cselect" id="RAM" name="RAM">
+                        <option value="" selected>Select RAM</option>
+                        <option value="64">64GB</option>
+                        <option value="32">32GB</option>
+                        <option value="16">16GB</option>
+                </select>
+            </p>
+
+            <p>
+                <label class="Clabel" for="HDD">HDD : </label>
+                <select class="Cselect" id="HDD" name="HDD">
+                        <option value="" selected>Select HDD</option>
+                        <option value="8">8TB</option>
+                        <option value="4">4TB</option>
+                        <option value="2">2TB</option>
+                        <option value="1">1TB</option>
+                </select>
+
+                <label class="Clabel" for="SDD">SDD : </label>
+                <select class="Cselect" id="SDD" name="SDD">
+                        <option value="" selected>Select SDD</option>
+                        <option value="4">4TB</option>
+                        <option value="2">2TB</option>
+                        <option value="1">1TB</option>
+                        <option value="512">512GB</option>               </select>
+
+                <label class="Clabel" for="display">Display : </label>
+                <select class="Cselect" id="display" name="display">
+                        <option value="" selected>Select Display</option>
+                        <option value="17">17'</option>
+                        <option value="15.6">15.6'</option>
+                        <option value="14">14'</option>
+                </select>
+            </p>
+            </fieldset>
+
+            <br><br>
+
+            <fieldset id="Che09">
+                <legend id="Che14">Additional Information</legend>
+
+                <label class="Clabel" for="comments">Additional Comments : </label>
+                <textarea class="Ctextarea" id="comments" name="comments" rows="4" placeholder="Enter your comments here..."></textarea>
+            </fieldset>
+
+            <input class="Cinput" type="submit" value="Submit Inquiry">
+
+        </form>
+        </div>
+    <div>
+            <footer>
+            <p>&copy; Lapzilla Gaming Laptops</p>
+            </footer>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,166 @@
+.lap
+{
+	float:right;
+	margin-left:80px;
+	width:100px;
+	height:200px;
+}
+#slide-6
+{
+	width:550px;
+	height: 550px;
+	float: right;
+	margin-top: auto;
+}
+#cimg{
+	margin-left: 20%;
+}
+#slide-6:hover
+{
+	transition:.5s;
+}
+.home{
+	margin-top: 140px;
+	padding: 5%;
+}
+.home_main{
+	display: flex;
+	flex-wrap: wrap;
+}
+.home-content
+{	
+	max-width:600px;
+	margin-left: 1%;
+}
+.home-content h3
+{
+	
+	font-size:35px;
+}
+.home-content .h1
+{
+	
+	font-size:70px;
+	color:#00abf0;
+}
+.home-content p
+{
+	font-size:22px;
+	font-weight:bold;
+	margin-top:-10px;
+}
+.icon
+{	
+	margin-top: 10%;
+	display:flex;
+}
+.icon a
+{
+	width:40px;
+	height:40px;
+	background:transparent;
+	border-radius:50%;
+	font-size:40px;
+	color:#00abf0;
+	text-decoration: none;
+	justify-content:center;
+	align-items:center;
+	margin-right:20px;
+	position: relative;
+	z-index:1;
+	overflow:hidden;
+	transition:.5s;
+}
+.icon a:hover
+{
+	color:#081b29;
+}	
+.icon a::before
+{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width:0;
+	height:100%;
+	background:#00abf0;
+	z-index:-1;
+	transition:.5s;
+}
+.icon a:hover:before
+{
+	width:100%;
+}
+.container
+{
+	width:80%;
+	height:30%;
+	display:flex;
+	align-items: center;
+	margin-top: 10%;
+}
+.card
+{
+	width:50%;
+	margin-left:5%;
+	padding: 3px;
+
+}
+.intro
+{
+	height:5%;
+	background: transparent;
+	color:white;
+	position: relative;
+	align-items: center;
+	margin-top: 10%;
+	margin-left: 20%;
+	transition:.9s;
+}
+h2
+{
+	margin-left:1%;
+	font-size:25px;
+}
+.sub
+{
+	font-size:15px;
+	visibility:hidden;
+	opacity:0;
+}
+
+.card:hover{
+	cursor:pointer;
+}
+.card:hover .intro
+{
+	height:1%;
+	background: transparent;
+	opacity:0.8;
+}
+.card:hover p
+{
+	opacity:1;
+	visibility:visible;
+}
+.card:hover img
+{
+	transform: scale(1.1) rotate(-5deg);
+}
+#slide-1, #slide-2, #slide-3, #slide-4, #slide-5
+{
+	width:85%;
+	padding-left: 20%;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar a {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .icon a {
+        margin: 0 5px;
+    }
+}
+

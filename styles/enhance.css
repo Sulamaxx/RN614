@@ -1,0 +1,25 @@
+
+.section{
+	margin-top: 10%;
+	margin-bottom: 3%;
+}
+.para
+{
+	font-size:35px;
+	margin-top: 7%;
+	color:#00abf0;
+	padding-left:70px;
+}
+.butt
+{
+	border:1px solid white;
+	margin:100px;
+	padding:20px;
+	background-color:#00abf0;
+	color:white;
+	text-decoration:none;
+}
+
+dd{
+	margin-top: 2%;
+}

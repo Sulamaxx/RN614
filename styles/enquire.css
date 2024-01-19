@@ -1,0 +1,110 @@
+/*
+filename: [W A Chethana Kaushalya Wickramasinghe]
+author: [W A Chethana Kaushalya Wickramasinghe]
+created: [15/11/2023]
+last modified: [27/11/2023]
+*/
+
+#Che03 {
+    height: 100%;
+    max-width: 900px;
+    margin: 80px auto;
+    margin-top: 200px;
+    background-color: #2c3e50;
+    padding: 50px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+#Che03:hover {
+    background-color: #34495e;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#Che04 {
+    color: #3498db;
+    text-align: center;
+    margin-top: 0;
+}
+
+#Che05, #Che06, #Che07, #Che08, #Che09 {
+    margin-bottom: 20px;
+    border: 2px solid #3498db;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+#Che10, #Che11, #Che12, #Che13, #Che14 {
+    font-weight: bold;
+    color: #3498db;
+}
+
+.Clabel {
+    display: block;
+    margin-bottom: 12px;
+    color: #ecf0f1;
+}
+
+.Cinput,
+.Cselect,
+.Ctextarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #3498db;
+    border-radius: 6px;
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.input{
+    width: 175%;
+    margin-top: 2%;
+}
+#asus{
+    margin-top: 5%;
+}
+
+.Cinput[type="submit"] {
+    background-color: #2ecc71;
+    color: #fff;
+    cursor: pointer;
+}
+
+.Cinput[type="submit"]:hover {
+    background-color: #081b2e;
+}
+
+.Ctextarea {
+    resize: vertical;
+}
+
+.Cinput [type="radio"]{
+    margin-right: 0% ;
+    color: #3498db;
+    cursor: pointer;
+}
+
+#Che15 {
+    text-align:left;
+	background:linear-gradient(180deg,#081b29,#00abf0);
+    margin-top:60px;
+    width: 100%;
+	padding:3%;
+}
+
+
+
+@media screen and (max-width: 600px) {
+    form {
+        width: 90%;
+    }
+
+    .Cnavbar a{
+        width: 90%;
+    }
+}
+
