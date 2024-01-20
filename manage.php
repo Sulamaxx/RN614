@@ -20,6 +20,48 @@
     <section class="manage">
         <h2 class="m2">Manage Orders</h2>
 
+        <div class="col-11">
+            <div class="row">
+
+                <div class="col-5">
+                    <div class="col-12">
+                        <input type="text" placeholder="Search..." class="form-control" id="s" />
+                    </div>
+                </div>
+
+                <div class="col-2">
+                    <select class="form-select" id="province">
+
+                        <option value="0">Sort By Status</option>
+                        <option value="0">Pending</option>
+                        <option value="0">Fulfilled</option>
+                        <option value="0">Paid</option>
+                        <option value="0">Archived</option>
+                        <option value="0">Canceled</option>
+
+                    </select>
+                </div>
+
+                <div class="col-4">
+                    <div class="col-12 row">
+                        <div class="col-5">
+                            <input type="text" placeholder="Min Cost" class="form-control" />
+                        </div>
+                        <div class="col-1">
+                            <h6 class="col-1">-</h6>
+                        </div>
+                        <div class="col-5">
+                            <input type="text" placeholder="Max Cost" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1">
+                    <btn class="btn btn-danger">Clear</btn>
+                </div>
+
+            </div>
+        </div>
+
         <table class="col-11">
             <thead class="col-12">
                 <tr class="col-12">
@@ -79,27 +121,25 @@
                 </tr>
                 <tr class="border border-white col-12">
                     <td class="col-1">1</td>
-                    <td class="col-1">2023-02-05 16:06:48</td>
-                    <td class="col-4">Alienware m18</td>
-                    <td class="col-2">$1399</td>
-                    <td class="col-2">John Mark</td>
-                    <td class="col-2">
-                        <h6>Pending</h6>
-                        <button class="btn btn-primary col-5">Confirm</button>
-                        <button class="btn btn-danger col-5">Cancel</button>
-                    </td>
-                </tr>
-                <tr class="border border-white col-12">
-                    <td class="col-1">1</td>
                     <td class="col-1">2023-02-06 16:06:48</td>
                     <td class="col-4">MSI BRAVO 15 B5ED</td>
                     <td class="col-2">$1399</td>
                     <td class="col-2">John Mark</td>
                     <td class="col-2">
-                        <h6>Fulfilled</h6>
-                        <button class="btn btn-info col-11">Paid</button>
+                        <button class="btn border border-1 border-danger fw-bold text-danger col-11">Canceled</button>
                     </td>
                 </tr>
+                <tr class="border border-white col-12">
+                    <td class="col-1">1</td>
+                    <td class="col-1">2023-02-05 16:06:48</td>
+                    <td class="col-4">Alienware m18</td>
+                    <td class="col-2">$1399</td>
+                    <td class="col-2">John Mark</td>
+                    <td class="col-2">
+                        <button class="btn border border-1 border-danger fw-bold text-danger col-11">Canceled</button>
+                    </td>
+                </tr>
+
 
             </tbody>
         </table>
