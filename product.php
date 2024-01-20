@@ -23,9 +23,11 @@
 
 	<section class="dcontent">
 		<div class="dlaptops">
-			<img src="images/asusrogstrix.png" alt="Gaming laptops1" class="dlaptop-image">
-			<h2>ROG Strix G16 (2023) G614 G614JI-N4174X</h2>
+			<img id="img1" src="images/asusrogstrix.png" alt="Gaming laptops1" class="dlaptop-image">
+			<h2 id="title1">ROG Strix G16 (2023) G614 G614JI-N4174X</h2>
+			<div id="description1" hidden>13th Gen Intel® Core™ i9-13980HX Processor, 2.2 GHz (36M Cache, up to 5.6 GHz, 24 cores: 8 P-cores and 16 E-cores),2TB PCIe 4.0 NVMe M.2 SSD16GB DDR5-4800 SO-DIMM x 2, ROG Nebula Display 16-inch, NVIDIA® GeForce RTX™ 4070 Laptop GPU, Windows 11.0 Home, 2.50 Kg (5.51 lbs)</div>
 			<ul>
+
 				<li>13th Gen Intel® Core™ i9-13980HX Processor </li>
 				<li>2.2 GHz (36M Cache, up to 5.6 GHz, 24 cores: 8 P-cores and 16 E-cores)</li>
 				<li>2TB PCIe 4.0 NVMe M.2 SSD</li>
@@ -34,18 +36,20 @@
 				<li>NVIDIA® GeForce RTX™ 4070 Laptop GPU</li>
 				<li> Windows 11.0 Home</li>
 				<li>2.50 Kg (5.51 lbs)</li>
-				<li>Colour: <select>
-						<option>Black</option>
-						<option>Electro Punk</option>
+				<li>Colour: <select class="form-select" id="color1">
+						<option value="0">Black</option>
+						<option value="1">Electro Punk</option>
 					</select>
 				</li>
 			</ul>
-			<p>Price: $1399</p>
-			<button onclick="Order()">Order Now</button>
+			<p>Price: $<span id="price1">1399</span></p>
+			<button class="btn btn-success col-12" onclick="Order(1)">Order Now</button>
 		</div>
+
 		<div class="dlaptops">
-			<img src="images/acerpredatorhelios.png" alt="gaming-laptop2" class="dlaptop-image">
-			<h2> Acer Predator Heliso 16 </h2>
+			<img id="img2" src="images/acerpredatorhelios.png" alt="gaming-laptop2" class="dlaptop-image">
+			<h2 id="title2"> Acer Predator Heliso 16 </h2>
+			<div id="description2" hidden>Intel Core i9 / 13th Gen Processor, Tetracosa-core (24 Core™) 2.20 GHz, 32GB DDR5 RAM, 2Tb NVMe SSD, Nvidia RTX 4080 Graphics, 16" WQXGA (2560 x 1600) 16:10 IPS 240 Hz, Mat black, RGB Backlit Keyboard, Windows 11 pro edition</div>
 			<ul>
 				<li>Intel Core i9 / 13th Gen Processor</li>
 				<li>Tetracosa-core (24 Core™) 2.20 GHz</li>
@@ -56,18 +60,19 @@
 				<li>Mat black</li>
 				<li>RGB Backlit Keyboard</li>
 				<li>Windows 11 pro edition</li>
-				<li>Colour: <select>
-						<option>Black</option>
-						<option>Abyss Black</option>
+				<li>Colour: <select id="color2" class="form-select">
+						<option value="0">Black</option>
+						<option value="1">Abyss Black</option>
 					</select>
 				</li>
 			</ul>
-			<p>Price: $1850</p>
-			<button>Order Now</button>
+			<p>Price: $<span id="price2">1850</span></p>
+			<button class="btn btn-success col-12" onclick="Order(2);">Order Now</button>
 		</div>
 		<div class="dlaptops">
-			<img src="images/Dell.jpg" alt="gaming-laptop3" class="dlaptop-image" id="img1">
-			<h2>Dell 5525 G15 Gaming Laptop - R7 </h2>
+			<img id="img3" src="images/Dell.jpg" alt="gaming-laptop3" class="dlaptop-image" id="img1">
+			<h2 id="title3">Dell 5525 G15 Gaming Laptop - R7 </h2>
+			<div id="description3" hidden>AMD Ryzen™ 9 6900HX Processor, 32 GB, 2 x 16 GB DDR5, 4800MHz, 1 TB, M.2 2280, PCIe NVMe Gen3 x4, SSD, NVIDIA® GeForce® RTX™ 3070 Ti, 8 GB, GDDR6, 115.6-inch, QHD, 2560 x 1440, 240 Hz Display, Dark Shadow Grey Color, Windows 11 pro</div>
 			<ul>
 				<li>AMD Ryzen™ 9 6900HX Processor</li>
 				<li>32 GB, 2 x 16 GB DDR5, 4800MHz</li>
@@ -76,14 +81,14 @@
 				<li>115.6-inch, QHD, 2560 x 1440, 240 Hz Display</li>
 				<li>Dark Shadow Grey Color</li>
 				<li>Windows 11 pro</li>
-				<li>Colour: <select>
-						<option>Dark Shadow Grey</option>
-						<option>Specter Green with Camouflage</option>
+				<li>Colour: <select class="form-select " id="color3">
+						<option value="0">Dark Shadow Grey</option>
+						<option value="1">Specter Green with Camouflage</option>
 					</select>
 				</li>
 			</ul>
-			<p>Price: $1299</p>
-			<button>Order Now</button>
+			<p>Price: $<span id="price3">1299</span></p>
+			<button class="col-12 btn btn-success" onclick="Order(3);" >Order Now</button>
 		</div>
 		<div class="dlaptops">
 			<img src="images/lenovo_ideapad.jpg" alt="gaming-laptop3" class="dlaptop-image">
@@ -185,7 +190,11 @@
 	<?php
 	include "include/footer.php";
 	?>
-	<script src="script.js"></script>
+	<script src="script.js">
+
+
+
+	</script>
 </body>
 
 </html>

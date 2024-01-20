@@ -7,7 +7,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="fixed-top">
         <div class="logo">
             <a href="index.php">
                 <p class="name">LapZilla</p>
