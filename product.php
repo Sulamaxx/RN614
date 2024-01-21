@@ -88,12 +88,12 @@
 				</li>
 			</ul>
 			<p>Price: $<span id="price3">1299</span></p>
-			<button class="col-12 btn btn-success" onclick="Order(3);" >Order Now</button>
+			<button class="col-12 btn btn-success" onclick="Order(3);">Order Now</button>
 		</div>
 		<div class="dlaptops">
 			<img id="img4" src="images/lenovo_ideapad.jpg" alt="gaming-laptop3" class="dlaptop-image">
 			<h2 id="title4">Lenovo Ideapad Slim 5 Pro - 16ACH6 (R7)</h2>
-			
+			<div class="discription4" hidden>AMD Ryzen 7 5800H Processor, 16GB DDR4 RAM, 512GB M.2 NVMe SSD, 4GB GTX 1650 NVIDIA GeForce Graphics, 16 WQXGA 350N 120Hz IPS Display, Stromy grey, Windows 10, 1.9 kg Weight</div>
 			<ul>
 				<li>AMD Ryzen 7 5800H Processor</li>
 				<li>16GB DDR4 RAM</li>
@@ -103,17 +103,18 @@
 				<li>Stromy grey</li>
 				<li>Windows 10</li>
 				<li>1.9 kg Weight</li>
-				<li>Colour: <select>
-						<option>Strom Grey Color</option>
+				<li>Colour: <select id="color4" class="form-select">
+						<option value="0">Strom Grey Color</option>
 					</select>
 				</li>
 			</ul>
-			<p>Price: $1450</p>
-			<button>Order Now</button>
+			<p>Price: $<span id="price4">1450</span></p>
+			<button class="btn btn-success col-12"  onclick="Order(5)">Order Now</button>
 		</div>
 		<div class="dlaptops">
-			<img src="images/notebook-alienware-m18-hd-perkey-intel-black-gallery-5.avif" alt="gaming-laptop4" class="dlaptop-image" id="img2">
-			<h2>Alienware m18</h2>
+			<img id="img5" src="images/notebook-alienware-m18-hd-perkey-intel-black-gallery-5.avif" alt="gaming-laptop4" class="dlaptop-image" id="img2">
+			<h2 id="title5">Alienware m18</h2>
+			<div id="description5" hidden>13th Gen Intel Core i7-13700HX, 16 cores, 24 threads, up to 5.00 GHz Turbo, Windows 11 Pro, English, French, Spanish, 1Tb M.2 NVMe SSD, NVIDIA GeForce RTX 4090, 16 GB GDDR6, 64 GB: 2 x 32 GB, DDR5, 4800 MT/s, Dark Metallic Moon, English US AlienFX RGB backlit (per-key)/ Alienware M Series keyboard</div>
 			<ul>
 				<li>13th Gen Intel Core i7-13700HX</li>
 				<li>16 cores, 24 threads, up to 5.00 GHz Turbo</li>
@@ -123,17 +124,18 @@
 				<li>64 GB: 2 x 32 GB, DDR5, 4800 MT/s</li>
 				<li>Dark Metallic Moon</li>
 				<li>English US AlienFX RGB backlit (per-key)/ Alienware M Series keyboard</li>
-				<li>Colour: <select>
-						<option>Dark Metalic Moon</option>
+				<li>Colour: <select id="color5" class="form-select">
+						<option value="0" >Dark Metalic Moon</option>
 					</select>
 				</li>
 			</ul>
-			<p>Price: $1999</p>
-			<button>Order Now</button>
+			<p>Price: $<span id="price5">1999</span></p>
+			<button class="col-12 btn btn-success" onclick="Order(5)" >Order Now</button>
 		</div>
 		<div class="dlaptops">
-			<img src="images/msibravo.jpg" alt="gaming-laptop5" class="dlaptop-image">
-			<h2>MSI BRAVO 15 B5ED</h2>
+			<img id="img6" src="images/msibravo.jpg" alt="gaming-laptop5" class="dlaptop-image">
+			<h2 id="title6" >MSI BRAVO 15 B5ED</h2>
+			<div id="description6" hidden>AMD Ryzen 7 5800H Processors, AMD Radeon RX 6500M with 4GB GDDR6, 512GB NVME PCIe, 16GB DDR4 3200MHz RAM, wheight 2.35 kg, Single Backlit Keyboard [Red], "15.6" IPS 144Hz, 53.5 Battery [Whr], Type-C USB3.2 Gen1</div>
 			<ul>
 				<li>AMD Ryzen 7 5800H Processors</li>
 				<li>AMD Radeon RX 6500M with 4GB GDDR6</li>
@@ -144,13 +146,13 @@
 				<li>"15.6" IPS 144Hz</li>
 				<li>53.5 Battery [Whr]</li>
 				<li>Type-C USB3.2 Gen1</li>
-				<li>Colour: <select>
-						<option>Black</option>
+				<li>Colour: <select id="color6" class="form-select" >
+						<option value="0" >Black</option>
 					</select>
 				</li>
 			</ul>
-			<p>Price:$1550</p>
-			<button>Order Now</button>
+			<p>Price:$<span id="price6">1550</span></p>
+			<button class="col-12 btn btn-success" onclick="Order(6)" >Order Now</button>
 		</div>
 		<div class="tables">
 			<div class="upcomming">
