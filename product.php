@@ -14,7 +14,7 @@
 	<section>
 
 		<?php
-		include "include/header.php";
+		include "include/header.inc";
 		?>
 		<h2 class="dhead">
 			INSTOCK PRODUCTS
@@ -191,7 +191,7 @@
 		</div>
 	</section>
 	<?php
-	include "include/footer.php";
+	include "include/footer.inc";
 	?>
 	<script src="script.js">
 

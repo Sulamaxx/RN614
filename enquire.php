@@ -11,7 +11,7 @@
 <body style="background-color: #081b29;">
 
     <?php
-    include "include/header.php";
+    include "include/header.inc";
     ?>
 
     <div>
@@ -158,7 +158,7 @@
     </div>
     <div>
         <?php
-        include "include/footer.php";
+        include "include/footer.inc";
         ?>
     </div>
 </body>

@@ -12,7 +12,7 @@
 <body class="body" style="background-color: #081b29;">
 
 	<?php
-	include "include/header.php";
+	include "include/header.inc";
 	?>
 
 	<section>
@@ -75,7 +75,7 @@
 
 
 	<?php
-	include "include/footer.php";
+	include "include/footer.inc";
 	?>
 
 </body>
