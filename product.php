@@ -91,8 +91,9 @@
 			<button class="col-12 btn btn-success" onclick="Order(3);" >Order Now</button>
 		</div>
 		<div class="dlaptops">
-			<img src="images/lenovo_ideapad.jpg" alt="gaming-laptop3" class="dlaptop-image">
-			<h2>Lenovo Ideapad Slim 5 Pro - 16ACH6 (R7)</h2>
+			<img id="img4" src="images/lenovo_ideapad.jpg" alt="gaming-laptop3" class="dlaptop-image">
+			<h2 id="title4">Lenovo Ideapad Slim 5 Pro - 16ACH6 (R7)</h2>
+			
 			<ul>
 				<li>AMD Ryzen 7 5800H Processor</li>
 				<li>16GB DDR4 RAM</li>

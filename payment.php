@@ -31,6 +31,8 @@ if (isset($_SESSION['order'])) {
                     <div class="col-12 col-lg-6 mt-0 mt-lg-2 ">
                         <div class="row">
 
+
+
                             <div id="carouselExampleIndicators" class="carousel slide col-7" style="left: 15%;">
                                 <div class="carousel-indicators">
                                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -58,12 +60,13 @@ if (isset($_SESSION['order'])) {
                                 </button>
                             </div>
 
-                            <div class="product-details text-white col-11 ms-4 mt-3 container">
-                               <div class="row">
-                               <p class="  text-justify col-12"><?php echo $Object->description; ?></p>
-                                <p class="col-6" >Price: $<?php echo number_format(doubleval($Object->price), 2); ?></p>
-                                <p class="col-6">Color : <?php echo $Object->color ?></p>
-                               </div>
+                            <div class="product-details text-white col-11 ms-4 mt-4 container">
+                                <div class="row">
+                                    <h3 class="col-12 text-white-50"><?php echo $Object->title ?></h3>
+                                    <p class="  text-justify col-12"><?php echo $Object->description; ?></p>
+                                    <p class="col-6">Price: $<?php echo number_format(doubleval($Object->price), 2); ?></p>
+                                    <p class="col-6">Color : <?php echo $Object->color ?></p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -71,20 +74,103 @@ if (isset($_SESSION['order'])) {
                     <div class="col-12 col-lg-6  mt-0 mt-lg-4 d-flex justify-content-center align-items-center">
                         <div class="row ">
 
-                            <div class="col-11">
+                            <div class="col-11 ms-4 ms-lg-0">
                                 <div class="row">
 
-                                    <input type="hidden" name="product" value="<?php echo $productName; ?>">
+                                    <div class="col-12 col-lg-6">
+                                        <div>
+                                            <label class="text-white-50 fw-bold col-12 form-label" for="first_name">First Name :</label>
+                                            <input class="col-12 form-control" type="text" name="first_name" required>
+                                        </div>
+                                    </div>
 
-                                    <label class="text-white-50 fw-bold col-12 form-label" for="quantity">Quantity:</label>
-                                    <input class="col-12 form-control" type="number" name="quantity" min="1" required>
+                                    <div class="col-12 col-lg-6 mt-3 mt-lg-0">
+                                        <div>
+                                            <label class="text-white-50 fw-bold col-12 form-label" for="last_name">Last Name :</label>
+                                            <input class="col-12 form-control" type="text" name="last_name" required>
+                                        </div>
+                                    </div>
 
-                                    <label class="text-white-50 fw-bold mt-4 col-12 form-label" for="name">Name:</label>
-                                    <input class="col-12 form-control" type="text" name="name" required>
+                                    <div class="col-12 col-lg-6 mt-3">
+                                        <div>
+                                            <label class="text-white-50 fw-bold col-12 form-label" for="email">Email:</label>
+                                            <input class="col-12 form-control" type="email" name="email" required>
+                                        </div>
+                                    </div>
 
-                                    <label class="text-white-50 fw-bold mt-4 col-12 form-label" for="email">Email:</label>
-                                    <input class="col-12 form-control" type="email" name="email" required>
+                                    <div class="col-12 col-lg-6 mt-3">
+                                        <div>
+                                            <label class="text-white-50 fw-bold col-12 form-label" for="mobile">Mobile No :</label>
+                                            <input class="col-12 form-control" type="text" name="mobile" required>
+                                        </div>
+                                    </div>
 
+                                    <div class="col-12 mt-3 ">
+                                        <div>
+                                            <label class="text-white-50 fw-bold col-12 form-label" for="address">Address :</label>
+                                            <input class="col-12 form-control" type="text" name="address" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6 mt-3 ">
+                                        <div>
+                                            <label class="text-white-50 fw-bold col-12 form-label" for="postal_code">Postal Code :</label>
+                                            <input class="col-12 form-control" type="text" name="postal_code" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6 mt-3">
+                                        <div>
+                                            <label class="text-white-50 fw-bold col-12 form-label" for="state">State :</label>
+                                            <input class="col-12 form-control" type="text" name="state" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6 mt-3">
+                                        <div>
+                                            <label class="text-white-50 fw-bold col-12 form-label" for="mobile">Mobile No :</label>
+                                            <input class="col-12 form-control" type="text" name="mobile" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6 mt-3">
+                                        <div>
+                                            <label class="text-white-50 fw-bold col-12 form-label" for="quantity">Quantity:</label>
+                                            <input class="form-control col-12" type="number" id="quantity" name="quantity" required>
+                                        </div>
+                                    </div>
+                                    <hr class="col-11 border border-2 border-white mt-3" style="margin-left: 40px;">
+                                    <div class="col-12 col-lg-6 mt-2">
+                                        <div><label class="text-white-50 fw-bold col-12 form-label" for="creditCardType">Credit Card Type:</label>
+                                            <select class="form-select col-12" id="creditCardType" name="creditCardType" required>
+                                                <option value="Visa">Visa</option>
+                                                <option value="Mastercard">Mastercard</option>
+                                                <option value="AmericanExpress">American Express</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-12 col-lg-6 mt-3">
+                                        <div>
+                                            <label class="text-white-50 fw-bold col-12 form-label" for="cardName">Name on Credit Card:</label>
+                                            <input class="form-control col-12" type="text" id="cardName" name="cardName" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6 mt-3">
+                                        <div>
+                                            <label class="text-white-50 fw-bold col-12 form-label" for="cardNumber">Credit Card Number:</label>
+                                            <input class="form-control col-12" type="text" id="cardNumber" name="cardNumber" pattern="[0-9]{15,16}" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6 mt-3">
+                                        <div>
+                                            <label class="text-white-50 fw-bold col-12 form-label" for="expiryDate">Expiry Date (mm-yy):</label>
+                                            <input class="form-control col-12" type="text" id="expiryDate" name="expiryDate" pattern="(0[1-9]|1[0-2])-[0-9]{2}" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-lg-6 mt-3">
+                                        <div>
+                                            <label class="text-white-50 fw-bold col-12 form-label" for="cvv">CVV:</label>
+                                            <input class="form-control col-12" type="text" id="cvv" name="cvv" pattern="[0-9]{3,4}" required>
+                                        </div>
+                                    </div>
 
                                     <button class="col-12 btn btn-info mt-5 fw-bold fs-4" onclick="OrderProcess();">Proceed to Payment</button>
 
