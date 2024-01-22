@@ -17,7 +17,12 @@ $cardNumber = sanitizeInput($_POST["cardNumber"]);
 $expiryDate = sanitizeInput($_POST["expiryDate"]);
 $cvv = sanitizeInput($_POST["cvv"]);
 
-$errors = validateOrderData($order, $firstName, $lastName, $email, $mobile, $address, $postalCode, $state, $city, $quantity, $creditCardType, $cardNumber, $expiryDate, $cvv);
+$product_name = sanitizeInput($_POST["product_name"]);
+$product_price = sanitizeInput($_POST["product_price"]);
+$product_color = sanitizeInput($_POST["product_color"]);
+$total_price = sanitizeInput($_POST["total_price"]);
+
+$errors = validateOrderData($total_price, $product_name, $product_price, $product_color, $order, $firstName, $lastName, $email, $mobile, $address, $postalCode, $state, $city, $quantity, $creditCardType, $cardNumber, $expiryDate, $cvv);
 
 if (!empty($errors)) {
     $errorString = urlencode(serialize($errors));
@@ -34,7 +39,7 @@ function sanitizeInput($input)
     return htmlspecialchars(trim($input));
 }
 
-function validateOrderData($order, $firstName, $lastName, $email, $mobile, $address, $postalCode, $state, $city, $quantity, $creditCardType, $cardNumber, $expiryDate, $cvv)
+function validateOrderData($total_price, $product_name, $product_price, $product_color, $order, $firstName, $lastName, $email, $mobile, $address, $postalCode, $state, $city, $quantity, $creditCardType, $cardNumber, $expiryDate, $cvv)
 {
     $errors = array();
 
@@ -91,6 +96,9 @@ function validateOrderData($order, $firstName, $lastName, $email, $mobile, $addr
     if (empty($cvv) || !preg_match('/^[0-9]{3,4}$/', $cvv)) {
         $errors[] = "Invalid CVV.";
     }
+    $order->product_name = $product_name;
+    $order->product_price = $product_price;
+    $order->product_color = $product_color;
     $order->firstName = $firstName;
     $order->lastName = $lastName;
     $order->email = $email;
@@ -104,6 +112,16 @@ function validateOrderData($order, $firstName, $lastName, $email, $mobile, $addr
     $order->cardNumber = $cardNumber;
     $order->expiryDate = $expiryDate;
     $order->cvv = $cvv;
+
+
+    $order->product_name = $product_name;
+
+    $order->product_price = $product_price;
+
+    $order->product_color = $product_color;
+
+    $order->total_price = $total_price;
+
 
     $_SESSION['order_place'] = json_encode($order);
 

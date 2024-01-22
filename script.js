@@ -92,6 +92,13 @@ function OrderProcess() {
     var expiryDate = document.getElementById('expiryDate').value;
     var cvv = document.getElementById('cvv').value;
 
+    var product_name = document.getElementById('product_name').innerHTML;
+    var  priceString= document.getElementById('product_price').innerHTML;
+    var product_color = document.getElementById('product_color').innerHTML;
+    var total_price = document.getElementById('total_price').innerHTML;
+
+    var product_price = parseFloat(priceString.replace(',', ''));
+
 
     var form = new FormData();
 
@@ -109,6 +116,11 @@ function OrderProcess() {
     form.append('expiryDate', expiryDate);
     form.append('cvv', cvv);
 
+    form.append('product_name', product_name);
+    form.append('product_price', product_price);
+    form.append('product_color', product_color);
+    form.append('total_price', total_price);
+
 
 
 
@@ -117,10 +129,22 @@ function OrderProcess() {
     request.onreadystatechange = () => {
         if (request.readyState == 4 && request.status == 200) {
             var text = request.responseText;
+            // alert(text)
             document.body.innerHTML = text;
             window.scrollTo(0, 0);
         }
     }
     request.open("POST", "order_process.php", true);
     request.send(form);
+}
+
+function quantityChange() {
+    var qty = document.getElementById('quantity').value;
+
+    var priceString = document.getElementById('product_price').innerHTML;
+
+    var price = parseFloat(priceString.replace(',', ''));
+    var totalPrice = qty * price;
+
+    document.getElementById('total_price').innerHTML = totalPrice.toFixed(2);
 }

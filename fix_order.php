@@ -29,7 +29,12 @@ if (isset($_SESSION['order_place'])) {
     <div class="container-fluid d-flex justify-content-center align-items-center" style="margin-top: 150px;">
         <div class="row">
             <h1 class="col-12 text-center fw-bold title">Fix Order</h1>
-
+            <div class="col-12">
+                <div class="row d-flex justify-content-center mt-3">
+                    <h3 class="col-4 text-white-50 text-center fw-bold">Total Price :</h3>
+                    <h3 class="col-4 text-white-50 text-center fw-bold" id="total_price"><?php echo $order->total_price ?></h3>
+                </div>
+            </div>
             <div class="col-12 col-lg-4">
                 <div class="row">
                     <?php
@@ -39,6 +44,13 @@ if (isset($_SESSION['order_place'])) {
                         }
                     }
                     ?>
+                    <div hidden  class="product-details text-white col-11 ms-4 mt-4 container">
+                        <div class="row">
+                            <h3 class="col-12 text-white-50" id="product_name"><?php echo $order->product_name ?></h3>
+                            <p class="col-6">Price: $<span id="product_price"><?php echo number_format(doubleval($order->product_price), 2); ?></span></p>
+                            <p class="col-6">Color : <span id="product_color"><?php echo $order->product_color ?></span></p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -100,13 +112,12 @@ if (isset($_SESSION['order_place'])) {
                     <div class="col-12 col-lg-6 mt-3">
                         <div>
                             <label class="text-white-50 fw-bold col-12 form-label" for="quantity">Quantity:</label>
-                            <input class="form-control col-12" type="number" id="quantity" name="quantity" value="<?php echo $order->quantity; ?>" required>
+                            <input class="form-control col-12" type="number" id="quantity" name="quantity" onkeyup="quantityChange();" value="<?php echo $order->quantity; ?>" required>
                         </div>
                     </div>
                     <hr class="col-11 border border-2 border-white mt-3" style="margin-left: 40px;">
-                    <div class="col-12 col-lg-6 mt-2">
 
-                        <?php echo $order->creditCardType; ?>
+                    <div class="col-12 col-lg-6 mt-2">
 
                         <div>
                             <label class="text-white-50 fw-bold col-12 form-label" for="creditCardType">Credit Card Type:</label>
@@ -120,7 +131,7 @@ if (isset($_SESSION['order_place'])) {
 
                     </div>
 
-                    <div class="col-12 col-lg-6 mt-3 mt-lg-2">
+                    <div class="col-12 col-lg-6 mt-3">
                         <div>
                             <label class="text-white-50 fw-bold col-12 form-label" for="cardNumber">Credit Card Number:</label>
                             <input class="form-control col-12" type="text" id="cardNumber" name="cardNumber" value="<?php echo $order->cardNumber; ?>" pattern="[0-9]{15,16}" required>
@@ -152,6 +163,7 @@ if (isset($_SESSION['order_place'])) {
     include 'include/footer.inc';
     ?>
 
+    <script src="script.js"></script>
 </body>
 
 </html>
