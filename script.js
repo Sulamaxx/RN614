@@ -148,3 +148,32 @@ function quantityChange() {
 
     document.getElementById('total_price').innerHTML = totalPrice.toFixed(2);
 }
+
+function generatePDF() {
+
+    const currentTimeMilliseconds = new Date().getTime();
+
+    const element = document.getElementById("pdfContent");
+    var opt = {
+        margin: 0.5,
+        filename: currentTimeMilliseconds + '.pdf',
+        image: {
+            type: 'jpeg',
+            quality: 0.98
+        },
+        html2canvas: {
+            scale: 3
+        },
+        jsPDF: {
+            unit: 'in',
+            format: [8.27, 11.69],
+            orientation: 'portrait'
+        },
+        pagebreak: {
+            mode: 'avoid-all',
+            before: '#page2el'
+        }
+    };
+
+    html2pdf().set(opt).from(element).save();
+}

@@ -17,6 +17,7 @@ if (isset($_SESSION['order_place'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fix Order</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/bootstrap.css" />
 </head>
 
 <body style="background-color: #081b29;">

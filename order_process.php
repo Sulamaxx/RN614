@@ -3,6 +3,8 @@
 $order = new stdClass();
 session_start();
 
+require "settings.php";
+
 $firstName = sanitizeInput($_POST["first_name"]);
 $lastName = sanitizeInput($_POST["last_name"]);
 $email = sanitizeInput($_POST["email"]);
@@ -30,8 +32,21 @@ if (!empty($errors)) {
     exit();
 } else {
     // should add data to database in here
-    header("Location: receipt.php");
-    exit();
+    $query = "INSERT INTO `orders`(`fname`,`lname`,`email`,`phone`,`address`,`pcode`,`city`,`state`,`qty`,`product`,`unit_price`,`order_cost`) 
+VALUES('" . $firstName . "','" . $lastName . "','" . $email . "','" . $mobile . "','" . $address . "','" . $postalCode . "','" . $city . "','" . $state . "','" . $quantity . "','" . $product_name . "','" . $product_price . "','" . $total_price . "');
+";
+
+    if ($conn->query($query) === TRUE) {
+        $order_id = $conn->insert_id;
+
+        header("Location: receipt.php?id=" . $order_id);
+        exit();
+    } else {
+
+        echo "Something went wrong please try again later";
+    }
+
+    $conn->close();
 }
 
 function sanitizeInput($input)
