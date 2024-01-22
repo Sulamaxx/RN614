@@ -15,10 +15,11 @@
 
     <?php
     include "include/header.inc";
+    require "settings.php";
     ?>
 
     <section class="manage">
-        <h2 class="m2">Manage Orders</h2>
+        <h2 class="m2 mb-5">Manage Orders</h2>
 
         <div class="col-11">
             <div class="row">
@@ -68,78 +69,97 @@
 
                     <td class="col-1">#</td>
                     <td class="col-1">Date</td>
-                    <td class="col-4">Product</td>
-                    <td class="col-2">Cost</td>
-                    <td class="col-2">Name</td>
+                    <td class="col-3">Product</td>
+                    <td class="col-1">Name</td>
+                    <td class="col-2">QTY & Cost</td>
                     <td class="col-2">Status</td>
                 </tr>
             </thead>
             <tbody class="col-12">
-                <tr class="border border-white col-12">
-                    <td class="col-1">1</td>
-                    <td class="col-1">2023-02-01 16:06:48</td>
-                    <td class="col-4">ROG Strix G16 (2023) G614 G614JI-N4174X</td>
-                    <td class="col-2">$1399</td>
-                    <td class="col-2">John Mark</td>
-                    <td class="col-2">
-                        <h6>Pending</h6>
-                        <button class="btn btn-primary col-5">Confirm</button>
-                        <button class="btn btn-danger col-5">Cancel</button>
-                    </td>
-                </tr>
-                <tr class="border border-white col-12">
-                    <td class="col-1">1</td>
-                    <td class="col-1">2023-02-02 16:06:48</td>
-                    <td class="col-4">Acer Predator Heliso 16</td>
-                    <td class="col-2">$1399</td>
-                    <td class="col-2">John Mark</td>
-                    <td class="col-2">
-                        <h6>Fulfilled</h6>
-                        <button class="btn btn-info col-11">Paid</button>
-                    </td>
-                </tr>
-                <tr class="border border-white col-12">
-                    <td class="col-1">1</td>
-                    <td class="col-1">2023-02-03 16:06:48</td>
-                    <td class="col-4">Dell 5525 G15 Gaming Laptop - R7</td>
-                    <td class="col-2">$1399</td>
-                    <td class="col-2">John Mark</td>
-                    <td class="col-2">
-                        <h6>Paid</h6>
-                        <button class="btn btn-warning col-11">Archived</button>
-                    </td>
-                </tr>
-                <tr class="border border-white col-12">
-                    <td class="col-1">1</td>
-                    <td class="col-1">2023-02-04 16:06:48</td>
-                    <td class="col-4">Lenovo Ideapad Slim 5 Pro - 16ACH6 (R7)</td>
-                    <td class="col-2">$1399</td>
-                    <td class="col-2">John Mark</td>
-                    <td class="col-2">
-                        <button class="btn border border-1 border-success fw-bold text-success col-11">Archived</button>
-                    </td>
-                </tr>
-                <tr class="border border-white col-12">
-                    <td class="col-1">1</td>
-                    <td class="col-1">2023-02-06 16:06:48</td>
-                    <td class="col-4">MSI BRAVO 15 B5ED</td>
-                    <td class="col-2">$1399</td>
-                    <td class="col-2">John Mark</td>
-                    <td class="col-2">
-                        <button class="btn border border-1 border-danger fw-bold text-danger col-11">Canceled</button>
-                    </td>
-                </tr>
-                <tr class="border border-white col-12">
-                    <td class="col-1">1</td>
-                    <td class="col-1">2023-02-05 16:06:48</td>
-                    <td class="col-4">Alienware m18</td>
-                    <td class="col-2">$1399</td>
-                    <td class="col-2">John Mark</td>
-                    <td class="col-2">
-                        <button class="btn border border-1 border-danger fw-bold text-danger col-11">Canceled</button>
-                    </td>
-                </tr>
 
+                <?php
+
+                $query = "SELECT * FROM `orders`";
+
+                $result = $conn->query($query);
+
+                while ($data = $result->fetch_assoc()) {
+
+                    if ($data['order_status'] == 'PENDING') {
+
+                ?>
+                        <tr class="border border-black-50 col-12">
+                            <td class="col-1"><?php echo $data['order_id'] ?></td>
+                            <td class="col-1"><?php echo $data['order_time'] ?></td>
+                            <td class="col-4"><?php echo $data['product'] ?></td>
+                            <td class="col-2"><?php echo $data['fname'] ?></td>
+                            <td class="col-2"><?php echo $data['qty'] ?> - $ <?php echo number_format($data['order_cost'], 2, '.', '') ?></td>
+                            <td class="col-2">
+                                <h6 class="fw-bold text-black">Pending</h6>
+                                <button class="btn btn-primary col-5" onclick="orderHandle('FULFILLED','<?php echo $data['order_id'] ?>');">Confirm</button>
+                                <button class="btn btn-danger col-5" onclick="orderHandle('CANCELED','<?php echo $data['order_id'] ?>');">Cancel</button>
+                            </td>
+                        </tr>
+                    <?php
+
+                    } else if ($data['order_status'] == 'FULFILLED') {
+                    ?>
+                        <tr class="border border-black-50 col-12">
+                            <td class="col-1"><?php echo $data['order_id'] ?></td>
+                            <td class="col-1"><?php echo $data['order_time'] ?></td>
+                            <td class="col-4"><?php echo $data['product'] ?></td>
+                            <td class="col-2"><?php echo $data['fname'] ?></td>
+                            <td class="col-2"><?php echo $data['qty'] ?> - $ <?php echo number_format($data['order_cost'], 2, '.', '') ?></td>
+                            <td class="col-2">
+                                <h6 class="fw-bold text-primary" >Fulfilled</h6>
+                                <button class="btn btn-info col-11" onclick="orderHandle('PAID','<?php echo $data['order_id'] ?>');">Paid</button>
+                            </td>
+                        </tr>
+                    <?php
+                    } else if ($data['order_status'] == 'PAID') {
+                    ?>
+                        <tr class="border border-black-50 col-12">
+                            <td class="col-1"><?php echo $data['order_id'] ?></td>
+                            <td class="col-1"><?php echo $data['order_time'] ?></td>
+                            <td class="col-4"><?php echo $data['product'] ?></td>
+                            <td class="col-2"><?php echo $data['fname'] ?></td>
+                            <td class="col-2"><?php echo $data['qty'] ?> - $ <?php echo number_format($data['order_cost'], 2, '.', '') ?></td>
+                            <td class="col-2">
+                                <h6 class="fw-bold text-warning">Paid</h6>
+                                <button class="btn btn-warning col-11" onclick="orderHandle('ARCHIVED','<?php echo $data['order_id'] ?>');">Archived</button>
+                            </td>
+                        </tr>
+                    <?php
+                    } else if ($data['order_status'] == 'ARCHIVED') {
+                    ?>
+                        <tr class="border border-black-50 col-12">
+                            <td class="col-1"><?php echo $data['order_id'] ?></td>
+                            <td class="col-1"><?php echo $data['order_time'] ?></td>
+                            <td class="col-4"><?php echo $data['product'] ?></td>
+                            <td class="col-2"><?php echo $data['fname'] ?></td>
+                            <td class="col-2"><?php echo $data['qty'] ?> - $ <?php echo number_format($data['order_cost'], 2, '.', '') ?></td>
+                            <td class="col-2">
+                                <h6 class="text-success fw-bold">Archived</h6>
+                            </td>
+                        </tr>
+                    <?php
+                    } else if ($data['order_status'] == 'CANCELED') {
+                    ?>
+                        <tr class="border border-black-50 col-12">
+                            <td class="col-1"><?php echo $data['order_id'] ?></td>
+                            <td class="col-1"><?php echo $data['order_time'] ?></td>
+                            <td class="col-4"><?php echo $data['product'] ?></td>
+                            <td class="col-2"><?php echo $data['fname'] ?></td>
+                            <td class="col-2"><?php echo $data['qty'] ?> - $ <?php echo number_format($data['order_cost'], 2, '.', '') ?></td>
+                            <td class="col-2">
+                                <h6 class="text-danger fw-bold">Canceled</h6>
+                            </td>
+                        </tr>
+                <?php
+                    }
+                }
+
+                ?>
 
             </tbody>
         </table>
@@ -148,6 +168,7 @@
     <?php
     include "include/footer.inc";
     ?>
+    <script src="script.js"></script>
 </body>
 
 </html>

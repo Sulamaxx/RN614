@@ -93,7 +93,7 @@ function OrderProcess() {
     var cvv = document.getElementById('cvv').value;
 
     var product_name = document.getElementById('product_name').innerHTML;
-    var  priceString= document.getElementById('product_price').innerHTML;
+    var priceString = document.getElementById('product_price').innerHTML;
     var product_color = document.getElementById('product_color').innerHTML;
     var total_price = document.getElementById('total_price').innerHTML;
 
@@ -176,4 +176,23 @@ function generatePDF() {
     };
 
     html2pdf().set(opt).from(element).save();
+}
+
+function orderHandle(x, id) {
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = () => {
+
+        if (request.readyState == 4 && request.status == 200) {
+            var text = request.responseText;
+
+            alert(text);
+
+            window.location.reload();
+
+        }
+
+    }
+
+    request.open("GET", "orderStatusUpdateProcess.php?key=" + x + "&id=" + id, true);
+    request.send();
 }
