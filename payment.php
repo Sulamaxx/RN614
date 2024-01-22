@@ -80,53 +80,53 @@ if (isset($_SESSION['order'])) {
                                     <div class="col-12 col-lg-6">
                                         <div>
                                             <label class="text-white-50 fw-bold col-12 form-label" for="first_name">First Name :</label>
-                                            <input class="col-12 form-control" type="text" name="first_name" required>
+                                            <input class="col-12 form-control" type="text" id="first_name" name="first_name" required>
                                         </div>
                                     </div>
 
                                     <div class="col-12 col-lg-6 mt-3 mt-lg-0">
                                         <div>
                                             <label class="text-white-50 fw-bold col-12 form-label" for="last_name">Last Name :</label>
-                                            <input class="col-12 form-control" type="text" name="last_name" required>
+                                            <input class="col-12 form-control" type="text" id="last_name" name="last_name" required>
                                         </div>
                                     </div>
 
                                     <div class="col-12 col-lg-6 mt-3">
                                         <div>
                                             <label class="text-white-50 fw-bold col-12 form-label" for="email">Email:</label>
-                                            <input class="col-12 form-control" type="email" name="email" required>
+                                            <input class="col-12 form-control" type="email" id="email" name="email" required>
                                         </div>
                                     </div>
 
                                     <div class="col-12 col-lg-6 mt-3">
                                         <div>
                                             <label class="text-white-50 fw-bold col-12 form-label" for="mobile">Mobile No :</label>
-                                            <input class="col-12 form-control" type="text" name="mobile" required>
+                                            <input class="col-12 form-control" type="text" id="mobile" name="mobile" required>
                                         </div>
                                     </div>
 
                                     <div class="col-12 mt-3 ">
                                         <div>
                                             <label class="text-white-50 fw-bold col-12 form-label" for="address">Address :</label>
-                                            <input class="col-12 form-control" type="text" name="address" required>
+                                            <input class="col-12 form-control" type="text" id="address" name="address" required>
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6 mt-3 ">
                                         <div>
                                             <label class="text-white-50 fw-bold col-12 form-label" for="postal_code">Postal Code :</label>
-                                            <input class="col-12 form-control" type="text" name="postal_code" required>
+                                            <input class="col-12 form-control" type="text" id="postal_code" name="postal_code" required>
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6 mt-3">
                                         <div>
                                             <label class="text-white-50 fw-bold col-12 form-label" for="state">State :</label>
-                                            <input class="col-12 form-control" type="text" name="state" required>
+                                            <input class="col-12 form-control" type="text" id="state" name="state" required>
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6 mt-3">
                                         <div>
-                                            <label class="text-white-50 fw-bold col-12 form-label" for="mobile">Mobile No :</label>
-                                            <input class="col-12 form-control" type="text" name="mobile" required>
+                                            <label class="text-white-50 fw-bold col-12 form-label" for="city">City :</label>
+                                            <input class="col-12 form-control" type="text" id="city" name="city" required>
                                         </div>
                                     </div>
                                     <div class="col-12 col-lg-6 mt-3">
@@ -139,21 +139,15 @@ if (isset($_SESSION['order'])) {
                                     <div class="col-12 col-lg-6 mt-2">
                                         <div><label class="text-white-50 fw-bold col-12 form-label" for="creditCardType">Credit Card Type:</label>
                                             <select class="form-select col-12" id="creditCardType" name="creditCardType" required>
-                                                <option value="Visa">Visa</option>
-                                                <option value="Mastercard">Mastercard</option>
-                                                <option value="AmericanExpress">American Express</option>
+                                                <option value="0">Select</option>
+                                                <option value="1">Visa</option>
+                                                <option value="2">Mastercard</option>
+                                                <option value="3">American Express</option>
                                             </select>
                                         </div>
                                     </div>
 
-
-                                    <div class="col-12 col-lg-6 mt-3">
-                                        <div>
-                                            <label class="text-white-50 fw-bold col-12 form-label" for="cardName">Name on Credit Card:</label>
-                                            <input class="form-control col-12" type="text" id="cardName" name="cardName" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-lg-6 mt-3">
+                                    <div class="col-12 col-lg-6 mt-3 mt-lg-2">
                                         <div>
                                             <label class="text-white-50 fw-bold col-12 form-label" for="cardNumber">Credit Card Number:</label>
                                             <input class="form-control col-12" type="text" id="cardNumber" name="cardNumber" pattern="[0-9]{15,16}" required>

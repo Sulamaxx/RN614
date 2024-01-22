@@ -78,5 +78,49 @@ function Order(x) {
 
 
 function OrderProcess() {
-    alert("ok")
+    var first_name = document.getElementById('first_name').value;
+    var last_name = document.getElementById('last_name').value;
+    var email = document.getElementById('email').value;
+    var mobile = document.getElementById('mobile').value;
+    var address = document.getElementById('address').value;
+    var postal_code = document.getElementById('postal_code').value;
+    var state = document.getElementById('state').value;
+    var city = document.getElementById('city').value;
+    var quantity = document.getElementById('quantity').value;
+    var creditCardType = document.getElementById('creditCardType').selectedIndex;
+    var cardNumber = document.getElementById('cardNumber').value;
+    var expiryDate = document.getElementById('expiryDate').value;
+    var cvv = document.getElementById('cvv').value;
+
+
+    var form = new FormData();
+
+    form.append('first_name', first_name);
+    form.append('last_name', last_name);
+    form.append('email', email);
+    form.append('mobile', mobile);
+    form.append('address', address);
+    form.append('postal_code', postal_code);
+    form.append('state', state);
+    form.append('city', city);
+    form.append('quantity', quantity);
+    form.append('creditCardType', creditCardType);
+    form.append('cardNumber', cardNumber);
+    form.append('expiryDate', expiryDate);
+    form.append('cvv', cvv);
+
+
+
+
+
+    var request = new XMLHttpRequest();
+    request.onreadystatechange = () => {
+        if (request.readyState == 4 && request.status == 200) {
+            var text = request.responseText;
+            document.body.innerHTML = text;
+            window.scrollTo(0, 0);
+        }
+    }
+    request.open("POST", "order_process.php", true);
+    request.send(form);
 }
