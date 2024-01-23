@@ -196,3 +196,37 @@ function orderHandle(x, id) {
     request.open("GET", "orderStatusUpdateProcess.php?key=" + x + "&id=" + id, true);
     request.send();
 }
+
+
+function SearchProcess() {
+    var name = document.getElementById('search_name').value;
+    var status = document.getElementById('search_status').selectedIndex;
+    var min_cost = document.getElementById('min_cost').value;
+    var max_cost = document.getElementById('max_cost').value;
+
+
+    var form = new FormData();
+
+    form.append('name', name);
+    form.append('status', status);
+    form.append('min_cost', min_cost);
+    form.append('max_cost', max_cost);
+
+
+    var request = new XMLHttpRequest();
+
+    request.onreadystatechange = () => {
+        if (request.readyState == 4 && request.status == 200) {
+            var text = request.responseText;
+
+            // alert(text)
+            document.getElementById('table_body').innerHTML = text;
+        }
+    }
+
+    request.open("POST", "searchProcess.php", true);
+    request.send(form);
+
+
+
+}

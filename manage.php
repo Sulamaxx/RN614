@@ -26,19 +26,19 @@
 
                 <div class="col-5">
                     <div class="col-12">
-                        <input type="text" placeholder="Search..." class="form-control" id="s" />
+                        <input type="text" placeholder="Search..." onkeyup="SearchProcess();" class="form-control" id="search_name" />
                     </div>
                 </div>
 
                 <div class="col-2">
-                    <select class="form-select" id="province">
+                    <select class="form-select" id="search_status" onchange="SearchProcess();">
 
                         <option value="0">Sort By Status</option>
-                        <option value="0">Pending</option>
-                        <option value="0">Fulfilled</option>
-                        <option value="0">Paid</option>
-                        <option value="0">Archived</option>
-                        <option value="0">Canceled</option>
+                        <option value="1">Pending</option>
+                        <option value="2">Fulfilled</option>
+                        <option value="3">Paid</option>
+                        <option value="4">Archived</option>
+                        <option value="5">Canceled</option>
 
                     </select>
                 </div>
@@ -46,18 +46,18 @@
                 <div class="col-4">
                     <div class="col-12 row">
                         <div class="col-5">
-                            <input type="text" placeholder="Min Cost" class="form-control" />
+                            <input type="text" onkeyup="SearchProcess();" placeholder="Min Cost" id="min_cost" class="form-control" />
                         </div>
                         <div class="col-1">
                             <h6 class="col-1">-</h6>
                         </div>
                         <div class="col-5">
-                            <input type="text" placeholder="Max Cost" class="form-control" />
+                            <input type="text" onkeyup="SearchProcess();" placeholder="Max Cost" id="max_cost" class="form-control" />
                         </div>
                     </div>
                 </div>
                 <div class="col-1">
-                    <btn class="btn btn-danger">Clear</btn>
+                    <btn class="btn btn-danger" onclick="window.location.reload();">Clear</btn>
                 </div>
 
             </div>
@@ -75,7 +75,7 @@
                     <td class="col-2">Status</td>
                 </tr>
             </thead>
-            <tbody class="col-12">
+            <tbody class="col-12" id="table_body">
 
                 <?php
 
@@ -111,7 +111,7 @@
                             <td class="col-2"><?php echo $data['fname'] ?></td>
                             <td class="col-2"><?php echo $data['qty'] ?> - $ <?php echo number_format($data['order_cost'], 2, '.', '') ?></td>
                             <td class="col-2">
-                                <h6 class="fw-bold text-primary" >Fulfilled</h6>
+                                <h6 class="fw-bold text-primary">Fulfilled</h6>
                                 <button class="btn btn-info col-11" onclick="orderHandle('PAID','<?php echo $data['order_id'] ?>');">Paid</button>
                             </td>
                         </tr>
