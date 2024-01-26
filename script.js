@@ -227,6 +227,4 @@ function SearchProcess() {
     request.open("POST", "searchProcess.php", true);
     request.send(form);
 
-
-
 }

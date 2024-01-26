@@ -14,6 +14,7 @@ $object = new stdClass();
 $object->title = $title;
 $object->description = $description;
 $object->img = $img;
+
 $object->color = $color;
 $object->price = $price;
 
